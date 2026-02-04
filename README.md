@@ -13,7 +13,7 @@ HRMS Lite is a lightweight Human Resource Management System that allows an admin
 
 - Frontend: React (Vite), React Router, Axios
 - Backend: Python, FastAPI, SQLAlchemy
-- Database: SQLite (default) or PostgreSQL (via `DATABASE_URL`)
+- Database: SQLite 
 
 ## Key Features
 
@@ -69,7 +69,6 @@ npm run dev
 
 Frontend runs on `http://localhost:5173` and calls the backend at `http://localhost:8000` by default.
 
-To change the backend URL:
 
 ```bash
 # copy `frontend/.env.example` -> `frontend/.env`
@@ -92,20 +91,20 @@ VITE_API_URL=http://localhost:8000
 
 ## Deployment (Suggested)
 
-### Backend (Render / Railway)
+### Backend (Render )
 
 - Root directory: `backend`
 - Build: `pip install -r requirements.txt`
 - Start: `uvicorn main:app --host 0.0.0.0 --port 10000`
 
-### Frontend (Vercel / Netlify)
+### Frontend (Vercel)
 
 - Root directory: `frontend`
-- Env var: `VITE_API_URL=<your backend URL>`
+- Env var: `VITE_API_URL=<backend URL>`
 - Build: `npm run build`
 
 ## Assumptions / Limitations
 
 - Single admin user (no authentication required).
-- SQLite is default; use PostgreSQL for production.
+- SQLite is use for production.
 - Attendance is unique per employee per date (duplicates return `409 Conflict`).
